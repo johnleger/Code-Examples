@@ -301,7 +301,7 @@ ul#play-part li {
 }
 hr {
     border-bottom-color: red;
-    border-bottom-style: solid;
+    border-bottom-style: dotted;
     border-bottom-width: 0;
     border-collapse: collapse;
     border-left-color-ltr-source: physical;
