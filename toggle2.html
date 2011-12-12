@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+<title>Simple Toggle with CSS &amp; jQuery by Soh Tanaka</title>
+<style type="text/css">
+html {
+	overflow-Y: scroll;
+}
+body {
+	font: 55% normal Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	line-height: 1.7em;
+}
+*, * focus {
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+.container {
+	margin: 0 auto;
+}
+h1 {
+	font: 3em normal Georgia, 'Times New Roman', Times, serif;
+	text-align:center;
+	padding: 20px 0;
+	color: #aaa;
+}
+h1 span {
+	color: #666;
+}
+h1 small {
+	font: 0.3em normal Verdana, Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing: 1.5em;
+	display: block;
+	color: #666;
+}
+h2.trigger {
+	padding: 0 0 0 50px;
+	margin: 0 0 5px 0;
+	background: url(h2_trigger_a.gif) no-repeat;
+	height: 46px;
+	line-height: 46px;
+	width: 450px;
+	font-size: 2em;
+	font-weight: normal;
+}
+h2.trigger a {
+	color: #000000;
+	text-decoration: none;
+	display: block;
+}
+h2.trigger a:hover {
+	color: #ccc;
+}
+h2.active {
+	background-position: left bottom;
+}
+.toggle_container {
+	margin: 0 auto;
+	padding: 25px;
+	line-height: 20px;
+	background:#E1E1E1 url(toggle_block_stretch.gif) repeat-y left top;
+	overflow: hidden;
+	font-size: 1.2em;
+	width:500px;
+	clear: both;
+	-moz-box-shadow: inset 0 0 5px #888;
+	-webkit-box-shadow: inset 0 0 5px #888;
+	box-shadow: inner 0 0 5px #888;
+}
+.toggle_container_main {
+	margin: 0 auto;
+	padding: 0;
+	border-top: 1px solid #d6d6d6;
+	background: #eeeeee url(toggle_block_stretch.gif) repeat-y left top;
+	overflow: visible;
+	font-size: 1.2em;
+	width:100%;
+	height:700px;
+	clear: both;
+}
+//*.toggle_container .block {
+	padding: 20px;
+	background: url(toggle_block_btm.gif) no-repeat left bottom;
+}*//  .toggle_container .block p {
+ padding: 5px 0;
+ margin: 5px 0;
+}
+.toggle_container h3 {
+	font: 2em bold Georgia, "Times New Roman", Times, serif;
+	margin: 25px 0 0px;
+	padding: 0 0 5px 0;
+	border-bottom: 1px dashed #ccc;
+}
+.toggle_container img {
+	float: left;
+	margin: 10px 15px 15px 0;
+	padding: 5px;
+	background: #ddd;
+	border: 1px solid #ccc;
+}
+.content_container {
+	margin: 0 auto;
+	width:750px;
+}
+p {
+margin-top:15px;
+}
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+//Set default open/close settings
+$(".toggle_container_main").hide();
+$(".toggle_container").hide();
+
+//On Click
+
+	$("h2.trigger-b").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+	});
+		
+$('h2.trigger').click(function(){
+	if( $(this).next().is(':hidden') ) { //If immediate next container is closed...
+		$('h2.trigger').removeClass('active').next().slideUp(); //Remove all h2.trigger classes and slide up the immediate next container
+		$(this).toggleClass('active').next().slideDown(); //Add h2.trigger class to clicked trigger and slide down the immediate next container
+	}
+	return false; //Prevent the browser jump to the link anchor
+});
+
+});
+</script>
+<!--<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".toggle_container_main").hide();
+	
+	$(".toggle_container").hide();
+
+	$("h2.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+	});
+
+});
+</script>-->
+</head>
+
+<body>
+<div class="container">
+  <h2 class="trigger-b"><a href="#">EVERYTHING</a></h2>
+  <div class="toggle_container_main">
+    <div class="content_container">
+      <div class="block">
+        <h2 class="trigger"><a href="#">Fellowship Campus</a></h2>
+        <div class="toggle_container">
+          <div class="block" >
+            <p><a href="http://www.woodlandschurch.tv/main/connect/worship/directions.asp">Location Map &amp; Directions</a></p>
+            <h3>Early Services</h3>
+            <p><strong>Wednesday, December 22</strong><br/>
+              6:00pm & 8:00pm // <em><span class="pink">Main Auditorium</span></em></p>
+            <p><strong>Thursday, December 23</strong><br/>
+              3:00pm, 5:00pm & 7:00pm // <em><span class="pink">Main Auditorium</span></em></p>
+            <p><strong>Friday, December 24</strong><br/>
+              1:00pm, 3:00pm, 5:00pm &amp; 7:00pm // <em><span class="pink">Main Auditorium</span></em><br />
+              8:00pm &amp; 11:00pm // <span class="pink"><em>Chapel in The Woods</em></span></p>
+            <h3>Servicio en Espa&ntilde;ol</h3>
+            <p><strong>Miércole, Diciembre 17</strong><br />
+              7:00pm // <span class="pink">&ldquo;The Ride&rdquo;</span></p>
+            <h3>Weekend Services</h3>
+            <p><strong>There will be no services Christmas Day December, 25</strong>.</p>
+            <p><strong>Sunday, December 26</strong><br/>
+              9:00am // <span class="pink"><em>Chapel in The Woods</em></span><br />
+              9:30am &amp; 11:30am // <span class="pink"><em>Main Auditorium</em></span><br />
+              1:45pm // <span class="pink"><em>Servicio en Espa&ntilde;ol</em></span><br />
+              <span class="pink"><strong>No SundayPM</strong></span></p>
+          </div>
+        </div>
+        <h2 class="trigger"><a href="#">East Campus</a></h2>
+        <div class="toggle_container">
+          <div class="block">
+            <p>Consequat te olim letalis premo ad hos olim odio olim indoles ut venio iusto. Euismod, sagaciter diam neque antehabeo blandit, jumentum transverbero luptatum. Lenis vel diam praemitto molior facilisi facilisi suscipere abico, ludus, at. Wisi suscipere nisl ad capto comis esse, autem genitus. Feugiat immitto ullamcorper hos luptatum gilvus eum. Delenit patria nunc os pneum acsi nulla magna singularis proprius autem exerci accumsan. </p>
+            <p>Praesent duis vel similis usitas camur, nostrud eros opes verto epulae feugiat ad. Suscipit modo magna letalis amet et tego accumsan facilisi, meus. Vindico luptatum blandit ulciscor mos caecus praesent sed meus velit si quis lobortis praemitto, uxor. </p>
+          </div>
+        </div>
+        <h2 class="trigger"><a href="#">Northwest Campus</a></h2>
+        <div class="toggle_container">
+          <div class="block">
+            <p>Consequat te olim letalis premo ad hos olim odio olim indoles ut venio iusto. Euismod, sagaciter diam neque antehabeo blandit, jumentum transverbero luptatum. Lenis vel diam praemitto molior facilisi facilisi suscipere abico, ludus, at. Wisi suscipere nisl ad capto comis esse, autem genitus. Feugiat immitto ullamcorper hos luptatum gilvus eum. Delenit patria nunc os pneum acsi nulla magna singularis proprius autem exerci accumsan. </p>
+            <p>Praesent duis vel similis usitas camur, nostrud eros opes verto epulae feugiat ad. Suscipit modo magna letalis amet et tego accumsan facilisi, meus. Vindico luptatum blandit ulciscor mos caecus praesent sed meus velit si quis lobortis praemitto, uxor. </p>
+          </div>
+        </div>
+        <h2 class="trigger"><a href="#">West Camps</a></h2>
+        <div class="toggle_container">
+          <div class="block">
+            <p>Consequat te olim letalis premo ad hos olim odio olim indoles ut venio iusto. Euismod, sagaciter diam neque antehabeo blandit, jumentum transverbero luptatum. Lenis vel diam praemitto molior facilisi facilisi suscipere abico, ludus, at. Wisi suscipere nisl ad capto comis esse, autem genitus. Feugiat immitto ullamcorper hos luptatum gilvus eum. Delenit patria nunc os pneum acsi nulla magna singularis proprius autem exerci accumsan. </p>
+            <p>Praesent duis vel similis usitas camur, nostrud eros opes verto epulae feugiat ad. Suscipit modo magna letalis amet et tego accumsan facilisi, meus. Vindico luptatum blandit ulciscor mos caecus praesent sed meus velit si quis lobortis praemitto, uxor. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- default set of jQuery Tools + jQuery 1.3.2 -->
+<script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script>
+<script>
+$(function() {
+	
+	
+	$("#tab ul").tabs("#panes > div", {effect: 'fade', fadeOutSpeed: 400});
+});
+</script>
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+/* ---------- Home Tabs------------- */
+#tab_container{
+	position: relative;
+}
+#tab {
+	border-bottom:0;
+	width:630px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 500;
+}
+#tab ul {
+    width:635px;
+    margin:0 auto;
+    padding:0;
+}
+#tab li {
+    border-right:1px solid #999999;
+    border-left:1px solid #999999;
+    border-top:1px solid #999999;
+    border-bottom:0;
+    float:left;
+    width:150px;
+    margin-right:2px;
+    list-style-type:none;
+    text-align:center;
+    
+    
+}
+#tab a {
+    color:#ffffff;
+    display:block;
+    padding:12px 0 0 0;
+    position:relative;
+    word-spacing:-2px;
+    font-size:13px;
+    height:30px;
+    text-decoration:none;
+
+    
+}
+#tab  a.current {
+    background-color:#ffffff;
+    color: #FF237B;
+    border-bottom:1px solid #ffffff;
+}
+/*#nav img {
+    background-color:#fff;
+    border:1px solid #ccc;
+    margin:3px 0 5px 27px;
+    padding:4px;
+    display:block;
+}*/
+#tab  strong {
+    display:block;
+    font-size:13px;
+}
+/* panes */
+#panes {
+	background:#fff url(../../images/_tabs/h300_reverse.png) repeat scroll 0 0;
+	border-color:#999999;
+	border-style:solid;
+	border-width:1px 1px 1px 1px;
+	width:628px;
+	height:255px;
+	margin-bottom:0px;
+	padding-bottom:20px;
+	/* must be relative so the individual panes can be absolutely positioned */
+    position:relative;
+	top: 43px;
+	left: 0px;
+}
+/* crossfading effect needs absolute positioning from the elements */
+#panes div {
+	display:none;
+	position:absolute;
+	top:20px;
+	left:20px;
+	font-size:14px;
+	color:#444;
+	width:610px;
+	padding-bottom:20px;
+}
+#panes img {
+    float:left;
+    margin-right:10px;
+}
+#panes p.more {
+    color:#000;
+    font-weight:bold;
+}
+#panes h3 {
+    margin:0 0 -5px 0;
+    font-size:22px;
+    font-weight:normal;
+}
+.overlay {
+    display:none;
+    width:500px;
+    padding:20px;
+    background-color:#ddd;
+}
+.clear {
+    clear: left;
+}
+/* get rid of those system borders being generated for A tags */
+a:active {
+  outline:none;
+}
+
+:focus {
+  -moz-outline-style:none;
+  }
+-->
+</style>
+</head>
+
+<body>
+<div id="tab_container">
+<div class="tabs">
+<!--tab -->
+<div id="tab">
+  <ul>
+    <li style="background-color:#DDDBDD;"><a href="#1"> SPECIAL TV OFFER </a> </li>
+    <li style="background-color:#A19CA0;"><a href="#2"> RESOURCES </a> </li>
+    <li style="background-color:#616569;"><a href="#3"> PODCASTS & DEVOS </a> </li>
+    <li style="background-color:#2d2928;"><a href="#3"> PRAYERS & PRAISE </a> </li>
+  </ul>
+</div>
+<div id="clear"></div>
+<!-- tab panes -->
+<div id="panes">
+  <div> <img src="http://farm1.static.flickr.com/40/122343298_22333fb8e3_m.jpg"  />
+    <h3>Seagram Building</h3>
+    <p class="more"> The Seagram Building is a skyscraper in New York City, located at 375 Park Avenue, between 52nd Street and 53rd Street in Midtown Manhattan. It was designed by the German architect Ludwig Mies van der Rohe, in collaboration with the American Philip Johnson. </p>
+    <p> It is 515 feet tall with 38 stories. Severud Associates were the structural engineering consultants. It stands as one of the finest examples of the functionalist aesthetic and a masterpiece of corporate modernism. It was designed as the headquarters for the Canadian distillers Joseph E. Seagram's & Sons, thanks to the foresight of Phyllis Lambert, the daughter of Samuel Bronfman, Seagram's CEO. </p>
+  </div>
+  <div> <img src="http://farm1.static.flickr.com/143/321464099_a7cfcb95cf_m.jpg"  />
+    <h3>Barcelona Pavilion</h3>
+    <p class="more"> The Barcelona Pavilion, designed by Ludwig Mies van der Rohe, was the German Pavilion for the 1929 International Exposition in Barcelona, Spain. This building was used for the official opening of the German section of the exhibition. </p>
+    <p> Mies was offered the commission of this building in 1928 after his successful administration of the 1927 Werkbund exhibition in Stuttgart. </p>
+    <p> The German Reich entrusted Mies with the artistic management and erection of not only the Barcelona Pavilion, but for the buildings for all the German sections at the 1929 Universal Exhibition. </p>
+  </div>
+  <div> <img src="http://farm1.static.flickr.com/40/122343298_22333fb8e3_m.jpg" />
+    <h3>Neue Nationalgalerie</h3>
+    <p class="more"> Neue Nationalgalerie at the Kulturforum is a museum for classical modern art in Berlin, with main focus on early the 20th century. It is part of the German National Gallery. The museum building and its sculpture garden were designed by Ludwig Mies van der Rohe and opened in 1968. </p>
+    <p> The collection features a number of unique highlights of modern 20th century art. Particularly well represented are Cubism, Expressionism, the Bauhaus and Surrealism. The collection owns masterpieces of artists like Pablo Picasso, Ernst Ludwig Kirchner, Joan Miró, Wassily Kandinsky and Barnett Newman. </p>
+  </div>
+</div>
+<br clear="all" />
+</div>
+</div>
+</body>
+</html>
